@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+     <h:head>
+        <title>Facelet Title</title>        
+        <link rel="stylesheet" href="css/style.css"></link>
+    </h:head>
+    <h:body>
+        <header id="main-header">		
+            <a id="logo-header" href="#">
+                <span class="site-name"></span>                
+            </a>             
+	</header>
+        <section id="main-content">
+            <article>
+                
+                <p:graphicImage url="img/img2.jpg" styleClass="content" height="200" width="1380" />
+                
+                <p:breadCrumb>
+                    <p:menuitem value="index" url="index.xhtml" />
+                    <p:menuitem outcome="/campeonato/List" value="Campeonato" />
+                    <p:menuitem outcome="/cancha/List" value="Estadios" />
+                    <p:menuitem outcome="/equipo/List" value="Equipos" />
+                    <p:menuitem outcome="/grupo/List" value="Grupos" />
+                    <p:menuitem outcome="/partido/List" value="Partidos" />                                 
+                </p:breadCrumb>              
+            </article>
+        </section>
+        <p:layout style="width:90%;min-height:600px; margin-left:5%; ">
+            
+            
+            <p:layoutUnit position="center" resizable="true" size="260" minSize="40">
+                <p:contentFlow value="#{imagesView.images}" var="image">
+                    <p:graphicImage url="img/#{image}" styleClass="content" />
+                    <!--<div class="caption">#{image}</div>-->
+                </p:contentFlow>
+                <h:form id="form">                
+                    <p:tabView dynamic="true" cache="true">
+                        <p:tab title="Copa Europea">
+                            <h:panelGrid columns="2" cellpadding="10">
+                                <p:graphicImage url="img/img3.jpg" height="200px"/>
+                                <h:outputText
+                                    value="El Campeonato Europeo de Fútbol, más conocido como la Eurocopa o simplemente la Euro, es el torneo internacional de selecciones nacionales de fútbol más importante de Europa, organizado por la UEFA cada cuatro años. En su edición inaugural, el torneo tenía el nombre de Copa de Naciones de Europa o Copa de Europa, y recibió su denominación actual en 1968. Las selecciones con más triunfos en esta competición son la alemana y la española, con tres títulos cada una" />
+                            </h:panelGrid>
+                        </p:tab>    
+                        <p:tab title="Copa aguila ">
+                            <h:panelGrid columns="2" cellpadding="10">
+                                <p:graphicImage url="img/img4.jpg" height="200px"/>
+                                <h:outputText value="La Copa Colombia 2015 (oficialmente y por motivos de patrocinio, Copa Águila 2015) es la decimotercera edición (13ª.) del torneo oficial que enfrenta a los clubes de las categorías Primera A y Primera B del fútbol en Colombia. Comenzó el 18 de febrero y finalizará el 19 de noviembre de 2015, y da un cupo para la Copa Sudamericana 2016" />
+                            </h:panelGrid>
+                        </p:tab>
+                        <p:tab title="Liga Francesa">
+                            <h:panelGrid columns="2" cellpadding="10">
+                                <p:graphicImage url="img/img5.jpg" height="200px"/>
+                                <h:outputText value="La Ligue 1 (anteriormente conocida como Division 1 y, a veces conocida como Le Championnat), es la máxima competición de liga de fútbol profesional de clubes de fútbol en Francia. Es la primera división del sistema de ligas del fútbol francés. La Ligue 1 es una de las dos divisiones que componen la Ligue de Football Professionnel junto a la Ligue 2. Está formada por 20 clubes, que opera en un sistema de ascensos y descensos con la Ligue 2, la segunda división francesa. La temporada se extiende desde agosto a mayo, con equipos que juegan 38 partidos cada uno por un total de 380 partidos en la temporada.
+
+Actualmente la Ligue 1 ocupa el sexto lugar en Europa detrás de La Liga española, la Premier League inglesa, la Bundesliga alemana, la Serie A italiana y la Primeira Liga portuguesa según el ranking UEFA." />
+                            </h:panelGrid>
+                        </p:tab>
+                        
+                        
+                        <p:tab title="Copa bbva">
+                            <h:panelGrid columns="2" cellpadding="10">
+                                <p:graphicImage url="img/img6.jpg" height="200px"/>
+                                <h:outputText value="La Primera División de España, también conocida simplemente como La Liga o por motivos de patrocinio Liga BBVA,1 es la máxima categoría del sistema de Ligas de fútbol de España. Comenzó a disputarse en la temporada 1928-29 y desde entonces se ha celebrado sin interrupciones, con la excepción del parón sufrido por la Guerra Civil de 1936 a 1939." />
+                            </h:panelGrid>
+                        </p:tab>
+                    </p:tabView>
+                </h:form>             
+            </p:layoutUnit>        
+        </p:layout>
+        
+        
+    </h:body>
+</html>
