@@ -2,41 +2,43 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
      <h:head>
-        <title>Facelet Title</title>        
-        <link rel="stylesheet" href="css/style.css"></link>
+        <title><ui:insert name="title">Sistema Campeonato</ui:insert></title>
+        <h:outputStylesheet library="css" name="jsfcrud.css"/>
+        <h:outputScript library="js" name="jsfcrud.js"/>
     </h:head>
     <h:body>
-        <header id="main-header">		
-            <a id="logo-header" href="#">
-                <span class="site-name"></span>                
-            </a>             
-	</header>
-        <section id="main-content">
-            <article>
-                
-                <p:graphicImage url="img/img2.jpg" styleClass="content" height="200" width="1380" />
-                
-                <p:breadCrumb>
-                    <p:menuitem value="index" url="index.xhtml" />
-                    <p:menuitem outcome="/jugador/List.xhtml" value="juagador"/>
-                    <p:menuitem outcome="/arbritro/List.xhtml" value="Campeonato" />
-                    <p:menuitem outcome="/campeonato/List.xhtml" value="Estadios" />
-                    <p:menuitem outcome="/cancha/List.xhtml" value="Equipos" />
-                    <p:menuitem outcome="/equipo/List.xhtml" value="Grupos" />
-                    <p:menuitem outcome="/equipoJugador/List.xhtml" value="Partidos" />                                 
-                </p:breadCrumb>              
-            </article>
-        </section>
-        <p:layout style="width:90%;min-height:600px; margin-left:5%; ">
-            
-            
+    <p:layoutUnit position="north" size="200" > 
+              <p:graphicImage url="img/img2.jpg" styleClass="content" height="150" width="1330" />                
+                <h:form id="menuForm">
+                    <p:menubar>
+                        <p:menuitem value="#{bundle.Home}" outcome="/index" icon="ui-icon-home"/>
+                            <p:menuitem value="Arbritro" outcome="/arbritro/List.xhtml" icon=" ui-icon-triangle-1-s" />
+                            <p:menuitem value="Campeonato" outcome="/campeonato/List.xhtml" icon=" ui-icon-triangle-1-s" />
+                            <p:menuitem value="Cancha" outcome="/cancha/List.xhtml" icon=" ui-icon-triangle-1-s" />
+                            <p:menuitem value="Equipo" outcome="/equipo/List.xhtml" icon=" ui-icon-triangle-1-s"/>
+                            <p:menuitem value="EquipoJugador" outcome="/equipoJugador/List.xhtml" icon=" ui-icon-triangle-1-s" />
+                            <p:menuitem value="Gol" outcome="/gol/List.xhtml"  icon=" ui-icon-triangle-1-s"/>
+                            <p:menuitem value="Grupo" outcome="/grupo/List.xhtml" icon=" ui-icon-triangle-1-s"/>
+                            <p:menuitem value="Jugador" outcome="/jugador/List.xhtml" icon=" ui-icon-triangle-1-s"/>
+                            <p:menuitem value="Partido" outcome="/partido/List.xhtml" icon=" ui-icon-triangle-1-s"/>
+                            <p:menuitem value="Sancion" outcome="/sancion/List.xhtml" icon=" ui-icon-triangle-1-s"/>
+                            <p:menuitem value="Tipo Campeonato" outcome="/tipoCampeonato/List.xhtml" icon=" ui-icon-triangle-1-s"/>
+                            <p:menuitem value="Tipo Sancion" outcome="/tipoSancion/List.xhtml" icon=" ui-icon-triangle-1-s"/>     
+                    </p:menubar>
+                </h:form> 
+              </p:layoutUnit>
+ 
             <p:layoutUnit position="center" resizable="true" size="260" minSize="40">
                 <p:contentFlow value="#{imagesView.images}" var="image">
                     <p:graphicImage url="img/#{image}" styleClass="content" />
                     <!--<div class="caption">#{image}</div>-->
                 </p:contentFlow>
+               </p:layoutUnit>
+        
+        <p:layoutUnit position="south" resizable="true" size="260" minSize="40">
                 <h:form id="form">                
                     <p:tabView dynamic="true" cache="true">
                         <p:tab title="Copa Europea">
@@ -69,10 +71,9 @@ Actualmente la Ligue 1 ocupa el sexto lugar en Europa detrás de La Liga españo
                             </h:panelGrid>
                         </p:tab>
                     </p:tabView>
-                </h:form>             
-            </p:layoutUnit>        
-        </p:layout>
-        
-        
+                </h:form>  
+        </p:layoutUnit>
+                    
+  
     </h:body>
 </html>
